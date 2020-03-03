@@ -9,6 +9,8 @@ tags: [git,GitHub,Gitee]
 
 由于国内访问Github仓库速度太慢，这里提供一个方案将Github的仓库镜像到Gitee，稍作修改还能支持各个Git仓库之间同步，或者一个仓库创建多个镜像。
 
+### 定义
+
 |           |                                        |      |
 | --------- | -------------------------------------- | ---- |
 | Gitee令牌 | 可用于访问Gitee仓库的凭据              |      |
@@ -17,7 +19,7 @@ tags: [git,GitHub,Gitee]
 
 
 
-1. 生成Gitee令牌
+### 1. 生成Gitee令牌
 
 *如果不需要自动同步，那可以跳过这一步*
 
@@ -39,7 +41,7 @@ tags: [git,GitHub,Gitee]
 
 此时生成了**令牌**，复制保存下来，因为离开页面就没办法再找回**令牌**了。示例中生成的令牌是`b1946ac92492d2347c6235b4d2611184`，下文都是用**令牌**指代此字符串。
 
-2. 初始化镜像仓库
+### 2. 初始化镜像仓库
 
 进入[Gitee首页](https://gitee.com/)
 
@@ -59,7 +61,7 @@ tags: [git,GitHub,Gitee]
 
 导入完成后，这个`镜像仓库`就可以克隆到本地了，但是现在的`镜像仓库`不会自动从Github同步新的变化，所以下一步利用Github Actions定时同步上游仓库到`镜像仓库`
 
-3. 定时同步
+### 3. 定时同步
 
 *如果不需要自动同步，那可以跳过这一步*
 
@@ -79,7 +81,7 @@ Value字段填入Gitee仓库前缀，模式是`https://Gitee用户名:Gitee令�
 
 上面的文件名填入`.github/workflows/openwrt+openwrt.yaml`（路径不能变，扩展名`.yaml`，文件名任意），下面的文件内容输入：
 
-[//]: # ({% raw %})
+[//]: # "{% raw %}"
 ```yaml
 name: openwrt/openwrt
 
@@ -110,7 +112,7 @@ jobs:
         run: git -C repo.git fetch --unshallow && git -C repo.git push --mirror downstream
 
 ```
-[//]: # ({% endraw %})
+[//]: # "{% endraw %}"
 
 这里有几行需要修改，注意保持缩进：
 
@@ -118,3 +120,7 @@ jobs:
 * cron这一行指定定时任务执行的条件，`22 * * * *`表示每个小时的22分都执行一次
 * SRC_REPO需要修改成你打算镜像的原始仓库地址
 * PUSH_TARGET需要把斜杠后面的仓库改成第二步的**路径**加上`.git`
+
+改完后点下面的`Commit new file`提交任务。
+
+之后可以在`Actions`页面查看任务执行情况，如果想立即执行，自己给`任务仓库`加个Star即可。
