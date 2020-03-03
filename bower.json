@@ -18,13 +18,13 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.1.0",
+    "jquery": "^2.2.4",
     "bootstrap": "^3.3.6",
     "octicons": "^3.5.0",
     "hover": "^2.0.2",
     "geopattern": "^1.2.3",
     "underscore": "^1.8.3",
-    "primer-markdown": "^2.5.1",
+    "primer": "^12.0.0",
     "flag-icon-css": "^2.3.1"
   }
 }
