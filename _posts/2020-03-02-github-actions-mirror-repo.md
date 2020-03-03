@@ -79,6 +79,7 @@ Value字段填入Gitee仓库前缀，模式是`https://Gitee用户名:Gitee令�
 
 上面的文件名填入`.github/workflows/openwrt+openwrt.yaml`（路径不能变，扩展名`.yaml`，文件名任意），下面的文件内容输入：
 
+[//]: # ({% raw %})
 ```yaml
 name: openwrt/openwrt
 
@@ -101,7 +102,7 @@ jobs:
       - name: Config DownStream
         run: git -C repo.git remote add downstream "$PUSH_TARGET"
         env:
-          PUSH_TARGET: $&#123;&#123; secrets.PUSH_TARGET_PREFIX &#125;&#125;/openwrt.git
+          PUSH_TARGET: ${{ secrets.PUSH_TARGET_PREFIX }}/openwrt.git
       - name: Push DownStream
         run: git -C repo.git push --all downstream && git -C repo.git push --tags downstream
       - name: Try Unshallow On Failed
@@ -109,6 +110,7 @@ jobs:
         run: git -C repo.git fetch --unshallow && git -C repo.git push --mirror downstream
 
 ```
+[//]: # ({% endraw %})
 
 这里有几行需要修改，注意保持缩进：
 
