@@ -6,17 +6,17 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Yummy Theme # ex. I m Chuan
-name: Your Name # ex. DONGChuan
-email: my_email_address@lalala.com
-location: My location # ex. Nice, France
-company: MyCompany
-company_url: my_company_website
-github_url: my_github_url # ex. https://github.com/DONGChuan
-github_username: # ex. DONGChuan
-description: description_of_your_web_site
+title: Blog
+name: jjm2473
+email: jjm2473@gmail.com
+location: 404
+company: 503
+company_url: https://github.com/503
+github_url: https://github.com/jjm2473
+github_username: jjm2473
+description: A blog
 favicon: favicon.png # Image must be in assets/images
-repository: github_username/github_username.github.io # ex. DONGChuan/DONGChuan.github.io
+repository: jjm2473/jjm2473.github.io
 
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
