@@ -31,11 +31,11 @@ tags: [git,mirrors,GitHub,Gitee]
 
 ![生成新令牌页面](/assets/images/image-20200302223613886.png)
 
-这里只勾选***projects***权限应该就够用了
+这里只勾选***projects***权限应该就够用了，点击***提交***
 
 ![生成令牌验证](/assets/images/image-20200302223724503.png)
 
-点击***提交***，输入Gitee登录密码，点击`验证`
+输入Gitee登录密码，点击***验证***
 
 ![成功生成令牌](/assets/images/image-20200302223915999.png)
 
