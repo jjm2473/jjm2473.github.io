@@ -4,7 +4,8 @@ css: ['sidebar-post-nav.css']
 ---
 {% include jumbotron.html %}
 
-{% assign image_cdn_root = "(" | append: site.cdn_root | append: "/assets/images/" %}
+{% capture image_root %}"/assets/images/{% endcapture %}
+{% capture image_cdn_root %}"{{ site.cdn_root }}/assets/images/{% endcapture %}
 <article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="row">
@@ -12,7 +13,7 @@ css: ['sidebar-post-nav.css']
         {% if page.no-post-nav %}
         <div class="col-md-12 markdown-body">
 
-            {{ content | replace: "(/assets/images/", image_cdn_root }}
+            {{ content | replace: image_root, image_cdn_root }}
 
             <!-- Comments -->
             {% include disqus-comments.html %}
@@ -20,7 +21,7 @@ css: ['sidebar-post-nav.css']
         {% else %}
         <div class="col-md-9 markdown-body">
 
-            {{ content | replace: "(/assets/images/", image_cdn_root }}
+            {{ content | replace: image_root, image_cdn_root }}
 
             <!-- Comments -->
             {% include disqus-comments.html %}
