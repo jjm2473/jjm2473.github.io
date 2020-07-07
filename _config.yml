@@ -17,6 +17,7 @@ github_username: jjm2473
 description: A blog
 favicon: favicon.png # Image must be in assets/images
 repository: jjm2473/jjm2473.github.io
+cdn_root: https://cdn.jsdelivr.net/gh/jjm2473/jjm2473.github.io@master
 
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
