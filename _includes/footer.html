@@ -9,8 +9,10 @@
             <em>Read this page in a different language:</em>
             <ul>
             {% for post in posts %}
+            {% if post.lang != page.lang %}
             {% assign lang=post.lang | default:"zh" %}
             <li><a href="{{ site.base-url }}{{ post.url }}" class="{{ lang }}" title="View in {{ site.data.languages[lang].label }}">{{ site.data.languages[lang].icon }} {{ site.data.languages[lang].label }}</a></li>
+            {% endif %}
             {% endfor %}
             </ul>
         </div>
