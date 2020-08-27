@@ -12,7 +12,7 @@ css: ['sidebar-post-nav.css']
 
         {% if page.no-post-nav %}
         <div class="col-md-12 markdown-body">
-
+            {% include lang-link.html %}
             {{ content | replace: image_root, image_cdn_root }}
 
             <!-- Comments -->
@@ -20,7 +20,7 @@ css: ['sidebar-post-nav.css']
         </div>
         {% else %}
         <div class="col-md-9 markdown-body">
-
+            {% include lang-link.html %}
             {{ content | replace: image_root, image_cdn_root }}
 
             <!-- Comments -->
